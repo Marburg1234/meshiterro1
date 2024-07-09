@@ -3,6 +3,15 @@ class ApplicationController < ActionController::Base
   # 上の文章を記述することで、devise機能(登録やログイン認証)
   # が使われる前に下のparametersメソッドが実行される設定
 
+  # サインイン後の遷移先をafter?sign_in_pathメソッドで決める
+  def after_sign_in_path_for(resource)
+    about_path
+  end
+
+  def after_sign_out_path_for(resource)
+    about_path
+  end
+
   # 呼び出せれた他のControllerからも参照できるようにするため
   # protectedを記述すること！
   protected

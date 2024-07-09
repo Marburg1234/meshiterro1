@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   #ルートパスでtopページを
   root to: "homes#top"
 
+  get 'homes/about' => 'homes#about', as: 'about'
+# Prefix                 Verb     URI Pattern                 Controller#action
+# destroy_user_session  DELETE   /users/sign_out(.:format)    devise/sessions#destroy
+
 end
